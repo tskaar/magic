@@ -54,15 +54,15 @@ information.
 		Note that resistances smaller than <I>value</I> may still
 		appear in the output netlist if the algorithm is unable to
 		simplify the network around the resistor.
-	   <DT> <B>simplify</B> [<B>on</B>|<B>off</B>]
+	   <DT> <B>simplify</B> [<B>on</B>|<I>off</I>]
 	   <DD> Turn on/off simplification of resistor nets.
-	   <DT> <B>extout</B> [<B>on</B>|<B>off</B>]
+	   <DT> <B>extout</B> [<B>on</B>|<I>off</I>]
 	   <DD> Turn on/off writing of the <TT>.res.ext</TT> file.
-	   <DT> <B>lumped</B> [<B>on</B>|<B>off</B>]
+	   <DT> <B>lumped</B> [<I>on</I>|<B>off</B>]
 	   <DD> Turn on/off writing of updated lumped resistances.
-	   <DT> <B>silent</B> [<B>on</B>|<B>off</B>]
+	   <DT> <B>silent</B> [<I>on</I>|<B>off</B>]
 	   <DD> Turn off/on printing of nets being processed.
-	   <DT> <B>debug</B> [<B>on</B>|<B>off</B>]
+	   <DT> <B>debug</B> [<I>on</I>|<B>off</B>]
 	   <DD> Turn off/on additional diagnostic information.
 	   <DT> <B>skip</B> <I>mask</I>
 	   <DD> Don't extract types indicated in the comma-separated list <I>mask</I>
@@ -159,15 +159,16 @@ information.
       <B>extresist mindelay</B> (value in picoseconds) sets a cutoff for
       considering a network for detailed resistance extraction based on
       the end-to-end delay calculated from the lumped resistance
-      estimate.  Once the network has been extracted, the <B>mindelay</B>
+      estimate. Once the network has been extracted, the <B>mindelay</B>
       value is again evaluated against a revised calculation of the
       delay to determine if the extracted detailed network should be
-      output.  The default <B>mindelay<B> value is set to 0, indicating
-      that only the lumped resistance threshold should be used for
-      determining when to extract a detailed resistance network.
-      <B>mindelay</B> may be used in place of <B>threshold</B>, or both
-      may be used together, in which case a network is only extracted
-      if both <B>threshold</B> and <B>mindelay</B> are exceeded. <P>
+      output. The default <B>mindelay</B> value is set to 1 ps. A
+      <B>mindelay</B> value of 0 indicates that only the lumped resistance
+      threshold should be used for determining when to extract a detailed
+      resistance network. <B>mindelay</B> may be used in place of
+      <B>threshold</B>, or both may be used together, in which case a
+      network is only extracted if both <B>threshold</B> and
+      <B>mindelay</B> are exceeded.
 
       More details on using <B>extresist</B> can be found in
       <B>magic</B> Tutorial number 8.
